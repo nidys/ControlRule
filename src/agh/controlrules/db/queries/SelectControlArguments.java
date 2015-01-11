@@ -41,4 +41,8 @@ public class SelectControlArguments extends ControlArguments {
 	public String toString() {
 		return String.format("control_arguments={arg_id=%d, fk_condition=%d, value=%s}", arg_id, fk_condition, value);
 	}
+	
+	public String asString() {
+		return String.format("%d, %d, %s", arg_id, fk_condition, value);
+	}
 }

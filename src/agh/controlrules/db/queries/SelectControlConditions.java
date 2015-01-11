@@ -49,4 +49,8 @@ public class SelectControlConditions extends ControlConditions {
 						condition_id, fk_control_rule, condition_name, negation, action, forall, reference_condition_action_id);
 	}
 
+	public String asString() {
+		return String.format("%d, %s, %s, %s, %s, %s, %s", condition_id, fk_control_rule, condition_name, negation, action, forall,
+				reference_condition_action_id);
+	}
 }

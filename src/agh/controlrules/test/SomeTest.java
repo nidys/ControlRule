@@ -12,12 +12,13 @@ import agh.controlrules.db.queries.SelectControlRules;
 import agh.controlrules.db.queries.tables.ControlConditions;
 import agh.controlrules.db.queries.tables.ControlRules;
 import agh.controlrules.db.queries.tables.QueryCreator;
+import agh.controlrules.utils.Logger;
 
 public class SomeTest {
 
 	public static void main(String[] args) {
-		// new SomeTest().insertTest1();
-		new SomeTest().selectTest1();
+//		 new SomeTest().insertTest1();
+		new SomeTest().selectTest1_differentFormat();
 	}
 
 	public void selectTest1() {
@@ -33,6 +34,25 @@ public class SomeTest {
 				List<QueryCreator> arguments = db.select(new SelectControlArguments(cc.condition_id));
 				for (QueryCreator qcArguments : arguments) {
 					System.out.println("\t\t" + qcArguments.toString());
+				}
+			}
+		}
+	}
+
+	public void selectTest1_differentFormat() {
+		Db db = new Db();
+		Logger.level = 1;
+		List<QueryCreator> list = db.select(new SelectControlRules("1a1b"));
+		for (QueryCreator qc : list) {
+			System.out.println(qc.asString());
+			ControlRules cr = (ControlRules) qc;
+			List<QueryCreator> conditions = db.select(new SelectControlConditions(cr.rule_id));
+			for (QueryCreator qcConditions : conditions) {
+				System.out.println("\t" + qcConditions.asString());
+				ControlConditions cc = (ControlConditions) qcConditions;
+				List<QueryCreator> arguments = db.select(new SelectControlArguments(cc.condition_id));
+				for (QueryCreator qcArguments : arguments) {
+					System.out.println("\t\t" + qcArguments.asString());
 				}
 			}
 		}
@@ -88,7 +108,7 @@ public class SomeTest {
 		InsertControlConditions actionCondition1 = new InsertControlConditions(ruleId, "vla");
 		actionCondition1.reference_condition_action_id = controlCondition1;
 		actionCondition1.action = true;
-		int controlCondition3 = db.insert(queryCondition);
+		int controlCondition3 = db.insert(actionCondition1);
 		db.insert(new InsertControlArguments(controlCondition3, "d=present"));
 		db.insert(new InsertControlArguments(controlCondition3, "K"));
 		db.insert(new InsertControlArguments(controlCondition3, "detected=false"));
@@ -96,7 +116,7 @@ public class SomeTest {
 		InsertControlConditions actionCondition2 = new InsertControlConditions(ruleId, "vlc");
 		actionCondition2.reference_condition_action_id = controlCondition1;
 		actionCondition2.action = true;
-		int controlCondition4 = db.insert(queryCondition);
+		int controlCondition4 = db.insert(actionCondition2);
 		db.insert(new InsertControlArguments(controlCondition4, "d=present"));
 		db.insert(new InsertControlArguments(controlCondition4, "J"));
 		db.insert(new InsertControlArguments(controlCondition4, "detected=true"));

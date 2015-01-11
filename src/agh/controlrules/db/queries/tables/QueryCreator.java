@@ -33,4 +33,7 @@ public abstract class QueryCreator {
 	protected QueryCreator getInstrance(ResultSet rs) throws SQLException {
 		return null;
 	}
+	public String asString() {
+		return null;
+	}
 }

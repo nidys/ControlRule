@@ -2,7 +2,7 @@ package agh.controlrules.utils;
 
 public class Logger {
 
-	private static int level = 5;
+	public static int level = 5;
 
 	public static void info(String in, Object... args) {
 		String s = String.format(in, args);

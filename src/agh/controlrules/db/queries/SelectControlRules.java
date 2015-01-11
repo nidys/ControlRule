@@ -49,4 +49,7 @@ public class SelectControlRules extends ControlRules {
 		return String.format("control_rule={rule_id=%d, rule_name=%s, type=%s}", rule_id, rule_name, type);
 	}
 
+	public String asString() {
+		return String.format("%d, %s, %s", rule_id, rule_name, type);
+	}
 }
