@@ -20,12 +20,12 @@ CREATE TABLE control_conditions (
  condition_name VARCHAR(255),
  negation BOOLEAN,
  action BOOLEAN,
+ forall BOOLEAN,
  reference_condition_action_id INT
 );
 
 CREATE TABLE control_arguments (
  arg_id BIGSERIAL PRIMARY KEY,
  fk_condition INT REFERENCES control_conditions(condition_id),
- variable VARCHAR(255),
- constant VARCHAR(255)
+ value VARCHAR(255)
 );

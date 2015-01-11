@@ -1,10 +1,10 @@
-package agh.db.utils;
+package agh.controlrules.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DatabaseManager {
+public class ConnectionManager {
 	private static final String DB_DRIVER = "org.postgresql.Driver";
 	private static final String DB_CONNECTION = "jdbc:postgresql://127.0.0.1:5432/control_rules_db";
 	private static final String DB_USER = "postgres";
