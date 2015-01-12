@@ -4,7 +4,7 @@ import java.util.List;
 
 
 public class ForAll extends Condition{
-	List<Condition> args;
+	public List<Condition> args;
 	
 	public ForAll() {
 		name = "    forall";
