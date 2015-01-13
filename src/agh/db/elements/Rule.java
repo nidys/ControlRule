@@ -2,6 +2,8 @@ package agh.db.elements;
 import java.util.ArrayList;
 import java.util.List;
 
+import agh.controlrules.db.queries.tables.ControlRules;
+
 
 public class Rule {
 	String name;
@@ -12,6 +14,13 @@ public class Rule {
 	public Rule() {
 		conditions = new ArrayList<Condition>();
 		actions = new ArrayList<Condition>();
+	}
+	
+	public Rule(ControlRules cr) {
+		conditions = new ArrayList<Condition>();
+		actions = new ArrayList<Condition>();
+		name = cr.rule_name;
+		type = cr.type;
 	}
 	
 	public Rule(String name, String type) {
@@ -48,8 +57,14 @@ public class Rule {
 	}
 	
 	private Condition parseConditionString(String conStr) {
-		String[] cons = conStr.split("\\(");
-		Condition con = new Condition(cons[0]);
+		Condition con;
+		String[] cons = conStr.split("\\(");		
+		if (cons[0].contains("\\+")) {
+			con = new Condition(cons[0].split("\\+")[1]);
+			con.setNegation(true);
+		} else {
+			con = new Condition(cons[0]);
+		}
 		String[] args = cons[1].split(",");
 		for (int i = 0; i < args.length - 1; i++) {
 			con.addArg(args[i]);

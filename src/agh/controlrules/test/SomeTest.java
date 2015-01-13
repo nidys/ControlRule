@@ -18,7 +18,7 @@ public class SomeTest {
 
 	public static void main(String[] args) {
 //		 new SomeTest().insertTest1();
-		new SomeTest().selectTest1_differentFormat();
+		new SomeTest().selectTest1();
 	}
 
 	public void selectTest1() {
@@ -42,7 +42,7 @@ public class SomeTest {
 	public void selectTest1_differentFormat() {
 		Db db = new Db();
 		Logger.level = 1;
-		List<QueryCreator> list = db.select(new SelectControlRules("2a2b"));
+		List<QueryCreator> list = db.select(new SelectControlRules("1a1b"));
 		for (QueryCreator qc : list) {
 			System.out.println(qc.asString());
 			ControlRules cr = (ControlRules) qc;

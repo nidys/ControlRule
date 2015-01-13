@@ -7,7 +7,7 @@ public class ForAll extends Condition{
 	public List<Condition> args;
 	
 	public ForAll() {
-		name = "    forall";
+		name = "forall";
 		args = new ArrayList<Condition>();
 	}
 	
