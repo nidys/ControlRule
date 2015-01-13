@@ -26,7 +26,7 @@ public class Rule {
 	public Rule(String name, String type) {
 		conditions = new ArrayList<Condition>();
 		actions = new ArrayList<Condition>();
-		this.name = name;
+		this.name = name.replace("'", "");
 		this.type = type;
 	}
 	
@@ -74,7 +74,13 @@ public class Rule {
 	}
 	
 	public String toString() {
-		String str = type + "(" + name + ") :-\n";
+		String str = "";
+		if (needsApostrophe(name)) {
+			str = type + "('" + name + "') :-\n";
+		} else {
+			str = type + "(" + name + ") :-\n";
+		}
+		 
 		for (int i = 0; i < conditions.size(); i++) {
 			str += conditions.get(i) + ",\n";
 		}
@@ -84,6 +90,17 @@ public class Rule {
 		}
 		str += actions.get(actions.size() - 1) + ".";
 		return str;
+	}
+	
+	private static boolean needsApostrophe(String name) {
+		if (name.matches(".*\\d.*")) { //contains number
+			try {
+					Integer.valueOf(name);
+			} catch (NumberFormatException e) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public String getName() {
