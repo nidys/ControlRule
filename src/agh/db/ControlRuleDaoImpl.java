@@ -45,10 +45,11 @@ public class ControlRuleDaoImpl implements ControlRuleDao {
 				ControlConditions cc = (ControlConditions) qcConditions;
 				if (cc.forall) {
 					ForAll fa = new ForAll();
+					ControlConditions facc = cc;
 					i++;
 					qcConditions = conditions.get(i);
 					cc = (ControlConditions) qcConditions;
-					while (cc.forall) {
+					while (cc.forall && (facc.condition_id == cc.reference_condition_action_id)) {
 						Condition con = new Condition(cc);
 						List<QueryCreator> arguments = db.select(new SelectControlArguments(cc.condition_id));
 						for (QueryCreator qcArguments : arguments) {
@@ -60,20 +61,22 @@ public class ControlRuleDaoImpl implements ControlRuleDao {
 						qcConditions = conditions.get(i);
 						cc = (ControlConditions) qcConditions;
 					}
+					i -= 1;
 					r.addActions(fa);
+				} else {			
+					Condition con = new Condition(cc);
+					List<QueryCreator> arguments = db.select(new SelectControlArguments(cc.condition_id));
+					for (QueryCreator qcArguments : arguments) {
+						ControlArguments ca = (ControlArguments) qcArguments;
+						con.addArg(ca.value);
+					}
+					if (!cc.action) {
+						r.addCondition(con);
+					} else {
+						System.out.println(con.getName());
+						r.addActions(con);
+					}	
 				}
-				
-				Condition con = new Condition(cc);
-				List<QueryCreator> arguments = db.select(new SelectControlArguments(cc.condition_id));
-				for (QueryCreator qcArguments : arguments) {
-					ControlArguments ca = (ControlArguments) qcArguments;
-					con.addArg(ca.value);
-				}
-				if (!cc.action) {
-					r.addCondition(con);
-				} else {
-					r.addActions(con);
-				}		
 			}
 		}
 		
