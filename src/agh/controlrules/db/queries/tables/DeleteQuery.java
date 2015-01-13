@@ -1,4 +1,4 @@
-package agh.controlrules.db;
+package agh.controlrules.db.queries.tables;
 
 public class DeleteQuery {
 	
