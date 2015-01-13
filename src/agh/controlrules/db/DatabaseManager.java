@@ -51,6 +51,21 @@ public class DatabaseManager {
 		}
 		return null;
 	}
+	
+	public static void delete(String query) {
+		Connection dbConnection = null;
+		Statement statement = null;
+		try {
+			dbConnection = ConnectionManager.getDBConnection();
+			statement = dbConnection.createStatement();
+			statement.executeUpdate(query);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+
+		} finally {
+			closeResources(dbConnection, statement);
+		}
+	}
 
 	private static void closeResources(Connection dbConnection, Statement statement) {
 		if (statement != null) {

@@ -1,10 +1,13 @@
 package agh.db;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import agh.controlrules.db.DeleteQuery;
 import agh.controlrules.db.queries.InsertControlArguments;
 import agh.controlrules.db.queries.InsertControlConditions;
 import agh.controlrules.db.queries.InsertControlRules;
+import agh.controlrules.db.queries.SelectAllControlRules;
 import agh.controlrules.db.queries.SelectControlArguments;
 import agh.controlrules.db.queries.SelectControlConditions;
 import agh.controlrules.db.queries.SelectControlRules;
@@ -21,16 +24,22 @@ public class ControlRuleDaoImpl implements ControlRuleDao {
 
 	@Override
 	public List<String> getAllControlRules() {
-		// TODO Auto-generated method stub
-		return null;
+		DbHelper db = new DbHelper();
+		List<QueryCreator> list = db.select(new SelectAllControlRules());
+		List<String> names = new ArrayList<String>();
+		for (QueryCreator qc : list) {
+			ControlRules cr = (ControlRules) qc;
+			names.add(cr.rule_name);
+		}
+		
+		return names;
 	}
 
 	@Override
 	public String getControlRule(String name) {
-		
-		return null;
+		return select(name).toString();
 	}
-	
+
 	public Rule select(String name) {
 		Rule r = null;
 		DbHelper db = new DbHelper();
@@ -39,7 +48,7 @@ public class ControlRuleDaoImpl implements ControlRuleDao {
 			ControlRules cr = (ControlRules) qc;
 			r = new Rule(cr); // bo jest tylko jeden
 			List<QueryCreator> conditions = db.select(new SelectControlConditions(cr.rule_id));
-			//for (QueryCreator qcConditions : conditions) {
+			// for (QueryCreator qcConditions : conditions) {
 			for (int i = 0; i < conditions.size(); i++) {
 				QueryCreator qcConditions = conditions.get(i);
 				ControlConditions cc = (ControlConditions) qcConditions;
@@ -63,7 +72,7 @@ public class ControlRuleDaoImpl implements ControlRuleDao {
 					}
 					i -= 1;
 					r.addActions(fa);
-				} else {			
+				} else {
 					Condition con = new Condition(cc);
 					List<QueryCreator> arguments = db.select(new SelectControlArguments(cc.condition_id));
 					for (QueryCreator qcArguments : arguments) {
@@ -75,11 +84,11 @@ public class ControlRuleDaoImpl implements ControlRuleDao {
 					} else {
 						System.out.println(con.getName());
 						r.addActions(con);
-					}	
+					}
 				}
 			}
 		}
-		
+
 		return r;
 	}
 
@@ -112,7 +121,7 @@ public class ControlRuleDaoImpl implements ControlRuleDao {
 			for (String arg : cond.getArgs())
 				db.insert(new InsertControlArguments(condId, arg));
 		}
-		
+
 		for (Condition act : rule.getActions()) {
 			if (act instanceof ForAll) {
 				ForAll forallCond = (ForAll) act;
@@ -121,11 +130,12 @@ public class ControlRuleDaoImpl implements ControlRuleDao {
 				int forallId = db.insert(forallQuery);
 				//
 				for (Condition condOfForall : forallCond.args) {
-					InsertControlConditions queryCondition = new InsertControlConditions(ruleId, condOfForall.getName(), condOfForall.getNegation(), false, true, 0);
+					InsertControlConditions queryCondition = new InsertControlConditions(ruleId, condOfForall.getName(), condOfForall.getNegation(),
+							false, true, 0);
 					queryCondition.reference_condition_action_id = forallId;
 					int controlCondition2 = db.insert(queryCondition);
 					for (String condOfForAllArg : condOfForall.getArgs())
-					db.insert(new InsertControlArguments(controlCondition2, condOfForAllArg));
+						db.insert(new InsertControlArguments(controlCondition2, condOfForAllArg));
 				}
 				continue;
 			}
@@ -137,8 +147,18 @@ public class ControlRuleDaoImpl implements ControlRuleDao {
 
 	@Override
 	public String deleteControlRule(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		DbHelper db = new DbHelper();
+		List<QueryCreator> list = db.select(new SelectControlRules(name));
+		ControlRules controlRules = (ControlRules) list.get(0);
+		List<QueryCreator> conditions = db.select(new SelectControlConditions(controlRules.rule_id));
+		for (int i = 0; i < conditions.size(); i++) {
+			QueryCreator qcConditions = conditions.get(i);
+			ControlConditions cc = (ControlConditions) qcConditions;
+			db.delete(DeleteQuery.createControlArguments(cc.condition_id));
+			db.delete(DeleteQuery.createControlConditions(cc.condition_id));
+		}
+		db.delete(DeleteQuery.createControlRules(controlRules.rule_name));
+		return "OK";
 	}
 
 }

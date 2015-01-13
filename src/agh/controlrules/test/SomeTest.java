@@ -13,12 +13,22 @@ import agh.controlrules.db.queries.tables.ControlConditions;
 import agh.controlrules.db.queries.tables.ControlRules;
 import agh.controlrules.db.queries.tables.QueryCreator;
 import agh.controlrules.utils.Logger;
+import agh.db.ControlRuleDaoImpl;
 
 public class SomeTest {
 
 	public static void main(String[] args) {
-//		 new SomeTest().insertTest1();
-		new SomeTest().selectTest1();
+		// new SomeTest().insertTest1();
+		// new SomeTest().selectTest1();
+		// new ControlRuleDaoImpl().deleteControlRule("1a1b");
+		f();
+	}
+
+	private static void f() {
+		List<String> names = new ControlRuleDaoImpl().getAllControlRules();
+		for (String str: names) {
+			System.out.println(str);
+		}
 	}
 
 	public void selectTest1() {

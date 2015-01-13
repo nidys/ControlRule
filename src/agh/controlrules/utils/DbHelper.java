@@ -13,4 +13,8 @@ public class DbHelper {
 	public List<QueryCreator> select(QueryCreator query) {
 		return DatabaseManager.select(query);
 	}
+
+	public void delete(String query) {
+		DatabaseManager.delete(query);
+	}
 }
