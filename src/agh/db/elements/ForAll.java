@@ -18,9 +18,12 @@ public class ForAll extends Condition{
 	public String toString() {
 		String str = name + "(";
 		for (int i = 0; i < args.size() - 1; i++) {
+			if (i == 1) {
+				str += "(";
+			}
 			str += args.get(i) + ",";
 		}
-		str += args.get(args.size() - 1) + ")";
+		str += args.get(args.size() - 1) + "))";
 		return str;
 	}
 }
