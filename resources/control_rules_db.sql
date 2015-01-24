@@ -1,7 +1,7 @@
 -- DROP DATABASE control_rules_db;
 
 CREATE DATABASE control_rules_db
-  WITH OWNER = postgres
+  WITH OWNER = controlrules
        ENCODING = 'UTF8'
        TABLESPACE = pg_default
        LC_COLLATE = 'Polish_Poland.1250'

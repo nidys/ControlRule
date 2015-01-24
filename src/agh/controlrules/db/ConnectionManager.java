@@ -9,8 +9,8 @@ import agh.controlrules.utils.Logger;
 public class ConnectionManager {
 	private static final String DB_DRIVER = "org.postgresql.Driver";
 	private static final String DB_CONNECTION = "jdbc:postgresql://127.0.0.1:5432/control_rules_db";
-	private static final String DB_USER = "postgres";
-	private static final String DB_PASSWORD = "student";
+	private static final String DB_USER = "controlrules";
+	private static final String DB_PASSWORD = "controlrules";
 
 	public static Connection getDBConnection() {
 		Connection dbConnection = null;
@@ -21,6 +21,7 @@ public class ConnectionManager {
 			Logger.error(e.getMessage());
 		}
 		try {
+			Logger.info("user=" +DB_USER);
 			dbConnection = DriverManager.getConnection(DB_CONNECTION, DB_USER, DB_PASSWORD);
 			return dbConnection;
 		} catch (SQLException e) {

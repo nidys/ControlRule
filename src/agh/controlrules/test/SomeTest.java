@@ -1,5 +1,8 @@
 package agh.controlrules.test;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.List;
 
 import agh.controlrules.db.DatabaseManager;
@@ -18,19 +21,47 @@ import agh.db.ControlRuleDaoImpl;
 public class SomeTest {
 
 	public static void main(String[] args) {
+		System.out.println("1 - insert\n2 - select\n3-getall\n4-delete\n5 - quit");
 		// new SomeTest().insertTest1();
-		 new SomeTest().selectTest1();
+		new SomeTest().selectTest1();
 		// new ControlRuleDaoImpl().deleteControlRule("1a1b");
-		f();
+		// f();
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		String userName = null;
+
+		// read the username from the command-line; need to use try/catch with
+		// the
+		// readLine() method
+		try {
+			while ((userName = br.readLine()) != null) {
+				if (userName.equals("1")) {
+					new SomeTest().insertTest1();
+				} else if (userName.equals("2")) {
+					new SomeTest().selectTest1();
+				} else if (userName.equals("3")) {
+					f();
+				} else if (userName.equals("4")) {
+					new ControlRuleDaoImpl().deleteControlRule("1a1b");
+				} else
+					break;
+				Logger.info("-------------------------------");
+			}
+		} catch (IOException ioe) {
+			System.out.println("IO error trying to read your name!");
+			System.exit(1);
+		}
+
 	}
 
 	private static void f() {
 		List<String> names = new ControlRuleDaoImpl().getAllControlRules();
-		for (String str: names) {
+		for (String str : names) {
 			Logger.info(str);
 		}
 	}
-//Logger.info();
+
+	// Logger.info();
 	public void selectTest1() {
 		Db db = new Db();
 		List<QueryCreator> list = db.select(new SelectControlRules("1a1b"));
@@ -39,7 +70,7 @@ public class SomeTest {
 			ControlRules cr = (ControlRules) qc;
 			List<QueryCreator> conditions = db.select(new SelectControlConditions(cr.rule_id));
 			for (QueryCreator qcConditions : conditions) {
-				Logger.info("\t" + qcConditions.toString());				
+				Logger.info("\t" + qcConditions.toString());
 				ControlConditions cc = (ControlConditions) qcConditions;
 				List<QueryCreator> arguments = db.select(new SelectControlArguments(cc.condition_id));
 				for (QueryCreator qcArguments : arguments) {
