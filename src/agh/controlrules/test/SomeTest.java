@@ -19,7 +19,7 @@ public class SomeTest {
 
 	public static void main(String[] args) {
 		// new SomeTest().insertTest1();
-		// new SomeTest().selectTest1();
+		 new SomeTest().selectTest1();
 		// new ControlRuleDaoImpl().deleteControlRule("1a1b");
 		f();
 	}
@@ -27,23 +27,23 @@ public class SomeTest {
 	private static void f() {
 		List<String> names = new ControlRuleDaoImpl().getAllControlRules();
 		for (String str: names) {
-			System.out.println(str);
+			Logger.info(str);
 		}
 	}
-
+//Logger.info();
 	public void selectTest1() {
 		Db db = new Db();
 		List<QueryCreator> list = db.select(new SelectControlRules("1a1b"));
 		for (QueryCreator qc : list) {
-			System.out.println(qc.toString());
+			Logger.info(qc.toString());
 			ControlRules cr = (ControlRules) qc;
 			List<QueryCreator> conditions = db.select(new SelectControlConditions(cr.rule_id));
 			for (QueryCreator qcConditions : conditions) {
-				System.out.println("\t" + qcConditions.toString());
+				Logger.info("\t" + qcConditions.toString());				
 				ControlConditions cc = (ControlConditions) qcConditions;
 				List<QueryCreator> arguments = db.select(new SelectControlArguments(cc.condition_id));
 				for (QueryCreator qcArguments : arguments) {
-					System.out.println("\t\t" + qcArguments.toString());
+					Logger.info("\t\t" + qcArguments.toString());
 				}
 			}
 		}
@@ -54,22 +54,22 @@ public class SomeTest {
 		Logger.level = 1;
 		List<QueryCreator> list = db.select(new SelectControlRules("1a1b"));
 		for (QueryCreator qc : list) {
-			System.out.println(qc.asString());
+			Logger.info(qc.asString());
 			ControlRules cr = (ControlRules) qc;
 			List<QueryCreator> conditions = db.select(new SelectControlConditions(cr.rule_id));
 			for (QueryCreator qcConditions : conditions) {
-				System.out.println("\t" + qcConditions.asString());
+				Logger.info("\t" + qcConditions.asString());
 				ControlConditions cc = (ControlConditions) qcConditions;
 				List<QueryCreator> arguments = db.select(new SelectControlArguments(cc.condition_id));
 				for (QueryCreator qcArguments : arguments) {
-					System.out.println("\t\t" + qcArguments.asString());
+					Logger.info("\t\t" + qcArguments.asString());
 				}
 			}
 		}
 	}
 
 	public void insertTest1() {
-		System.out.println("---test1---");
+		Logger.info("---test1---");
 		Db db = new Db();
 		int ruleId = db.insert(new InsertControlRules("1a1b", "r"));
 		insertFirstCondition(db, ruleId);

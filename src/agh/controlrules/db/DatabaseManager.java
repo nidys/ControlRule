@@ -28,7 +28,7 @@ public class DatabaseManager {
 			if (generatedKey.next())
 				return (int) generatedKey.getLong(1);
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+			Logger.error(e.getMessage());
 		} finally {
 			closeResources(dbConnection, statement);
 		}
@@ -44,8 +44,7 @@ public class DatabaseManager {
 			statement = dbConnection.createStatement();
 			return query.getSelectResult(statement);
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-
+			Logger.error(e.getMessage());
 		} finally {
 			closeResources(dbConnection, statement);
 		}
@@ -60,8 +59,7 @@ public class DatabaseManager {
 			statement = dbConnection.createStatement();
 			statement.executeUpdate(query);
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-
+			Logger.error(e.getMessage());
 		} finally {
 			closeResources(dbConnection, statement);
 		}
@@ -72,7 +70,7 @@ public class DatabaseManager {
 			try {
 				statement.close();
 			} catch (SQLException e) {
-				e.printStackTrace();
+				Logger.error(e.getMessage());
 			}
 		}
 
@@ -80,7 +78,7 @@ public class DatabaseManager {
 			try {
 				dbConnection.close();
 			} catch (SQLException e) {
-				e.printStackTrace();
+				Logger.error(e.getMessage());
 			}
 		}
 	}
