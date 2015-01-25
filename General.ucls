@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.8" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" language="java" name="agh.controlrules.db.ConnectionManager" project="ControlRule" 
+    file="/ControlRule/src/agh/controlrules/db/ConnectionManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="675" y="86"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="agh.controlrules.db.DatabaseManager" project="ControlRule" 
+    file="/ControlRule/src/agh/controlrules/db/DatabaseManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="675" y="147"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="agh.controlrules.db.queries.InsertControlConditions" project="ControlRule" 
+    file="/ControlRule/src/agh/controlrules/db/queries/InsertControlConditions.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="684" y="691"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="agh.controlrules.db.queries.InsertControlRules" project="ControlRule" 
+    file="/ControlRule/src/agh/controlrules/db/queries/InsertControlRules.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="688" y="445"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="agh.controlrules.db.queries.SelectControlConditions" project="ControlRule" 
+    file="/ControlRule/src/agh/controlrules/db/queries/SelectControlConditions.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="679" y="618"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="agh.controlrules.db.queries.InsertControlArguments" project="ControlRule" 
+    file="/ControlRule/src/agh/controlrules/db/queries/InsertControlArguments.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="684" y="803"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="agh.controlrules.db.queries.SelectControlRules" project="ControlRule" 
+    file="/ControlRule/src/agh/controlrules/db/queries/SelectControlRules.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="687" y="394"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="agh.controlrules.db.queries.SelectAllControlRules" project="ControlRule" 
+    file="/ControlRule/src/agh/controlrules/db/queries/SelectAllControlRules.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="688" y="494"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="agh.controlrules.db.queries.SelectControlArguments" project="ControlRule" 
+    file="/ControlRule/src/agh/controlrules/db/queries/SelectControlArguments.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="687" y="870"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="agh.controlrules.db.queries.tables.QueryCreator" project="ControlRule" 
+    file="/ControlRule/src/agh/controlrules/db/queries/tables/QueryCreator.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="675" y="239"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="agh.controlrules.db.queries.tables.ControlRules" project="ControlRule" 
+    file="/ControlRule/src/agh/controlrules/db/queries/tables/ControlRules.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="688" y="329"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="agh.controlrules.db.queries.tables.DeleteQuery" project="ControlRule" 
+    file="/ControlRule/src/agh/controlrules/db/queries/tables/DeleteQuery.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="666" y="920"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="agh.controlrules.db.queries.tables.ControlConditions" project="ControlRule" 
+    file="/ControlRule/src/agh/controlrules/db/queries/tables/ControlConditions.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="690" y="544"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="agh.controlrules.db.queries.tables.ControlArguments" project="ControlRule" 
+    file="/ControlRule/src/agh/controlrules/db/queries/tables/ControlArguments.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="686" y="749"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="agh.controlrules.utils.ParserHelper" project="ControlRule" 
+    file="/ControlRule/src/agh/controlrules/utils/ParserHelper.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="257" y="404"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="agh.controlrules.utils.DbBridge" project="ControlRule" 
+    file="/ControlRule/src/agh/controlrules/utils/DbBridge.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="505" y="187"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="agh.db.elements.ForAll" project="ControlRule" 
+    file="/ControlRule/src/agh/db/elements/ForAll.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="262" y="570"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="agh.db.ControlRuleDaoImpl" project="ControlRule" 
+    file="/ControlRule/src/agh/db/ControlRuleDaoImpl.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="358" y="320"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <interface id="19" language="java" name="agh.db.ControlRuleDao" project="ControlRule" 
+    file="/ControlRule/src/agh/db/ControlRuleDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="357" y="245"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </interface>  
+  <class id="20" language="java" name="agh.db.elements.Condition" project="ControlRule" 
+    file="/ControlRule/src/agh/db/elements/Condition.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="438" y="571"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="agh.db.elements.Rule" project="ControlRule" 
+    file="/ControlRule/src/agh/db/elements/Rule.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="365" y="479"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="agh.controlrules.utils.DbHelper" project="ControlRule" 
+    file="/ControlRule/src/agh/controlrules/utils/DbHelper.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="500" y="410"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <dependency id="23">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <dependency id="24">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <generalization id="25">    
+    <bendpoint x="783" y="545"/>    
+    <bendpoint x="784" y="241"/>    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <realization id="26">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="19"/>  
+  </realization>  
+  <dependency id="27">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="28">    
+    <bendpoint x="493" y="919"/>    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <generalization id="29">    
+    <bendpoint x="572" y="397"/>    
+    <bendpoint x="574" y="329"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <generalization id="30">    
+    <bendpoint x="573" y="494"/>    
+    <bendpoint x="573" y="328"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <dependency id="31">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="32">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <generalization id="33">    
+    <bendpoint x="568" y="801"/>    
+    <bendpoint x="569" y="744"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <generalization id="34">    
+    <bendpoint x="567" y="875"/>    
+    <bendpoint x="567" y="744"/>    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <association id="35">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="36" name="args"/>      
+      <multiplicity id="37" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="38">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="39" name="conditions"/>      
+      <multiplicity id="40" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="41">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <generalization id="42">    
+    <bendpoint x="785" y="329"/>    
+    <bendpoint x="784" y="240"/>    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <generalization id="43">    
+    <bendpoint x="578" y="626"/>    
+    <bendpoint x="579" y="544"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <generalization id="44">    
+    <bendpoint x="783" y="753"/>    
+    <bendpoint x="781" y="241"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <dependency id="45">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <generalization id="46">    
+    <bendpoint x="573" y="443"/>    
+    <bendpoint x="573" y="329"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <dependency id="47">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="48">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="49">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <generalization id="50">    
+    <bendpoint x="576" y="690"/>    
+    <bendpoint x="578" y="544"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <dependency id="51">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="22"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="false" initial-value="false" signature="false" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="false" package="false" protected="false" private="false" static="false"/>    
+    <operations public="false" package="false" protected="false" private="false" static="false"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
