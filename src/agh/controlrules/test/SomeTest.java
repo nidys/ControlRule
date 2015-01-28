@@ -11,6 +11,7 @@ import agh.db.ControlRuleDaoImpl;
 public class SomeTest {
 
 	static String sampleRules[] = new String[] { RulesExmaple.TEST_6, RulesExmaple.TEST_7, RulesExmaple.TEST_off, RulesExmaple.TEST_test };
+	static String rulesNames[] = new String[] { "6", "7", "off", "test" };
 
 	public static void main(String[] args) {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -85,7 +86,7 @@ public class SomeTest {
 		String cmd = br.readLine();
 		int ruleNum = Integer.valueOf(cmd);
 		System.out.println("Getting rule...");
-		System.out.println("Got:" + new ControlRuleDaoImpl().getControlRule(sampleRules[ruleNum]));
+		System.out.println("Got:" + new ControlRuleDaoImpl().getControlRule(rulesNames[ruleNum]));
 		System.out.println("----------");
 	}
 
@@ -94,7 +95,7 @@ public class SomeTest {
 		String cmd = br.readLine();
 		int ruleNum = Integer.valueOf(cmd);
 		System.out.println("Deleting");
-		new ControlRuleDaoImpl().deleteControlRule(sampleRules[ruleNum]);
+		new ControlRuleDaoImpl().deleteControlRule(rulesNames[ruleNum]);
 		System.out.println("----------");
 	}
 
